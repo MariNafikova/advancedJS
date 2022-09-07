@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Интернет-магазин</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <div class="logo">MyShop</div>
+                <filtered></filtered>
+                <div class="cart">
+                  
+                    <button class="btn-cart" type="button" @click="showCart=!showCart">Cart</button>
+                    
+                    <cart :cart-items="cartProducts"
+                    :img="imgCart"
+                    :visibility="showCart"></cart>
+                    
+                </div>
+            </header>
+
+            <main>
+                <products :products="filtered" :img="imgProduct" @add-product="addProduct"></products>
+                <error></error>
+            </main>
+        </div>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+        <script src="ProductComponent.js"></script>
+        <script src="CartComponent.js"></script>
+        <script src="FilteredComponent.js"></script>
+        <script src="ErrorComponent.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
